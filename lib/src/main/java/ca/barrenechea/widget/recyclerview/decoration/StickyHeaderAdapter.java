@@ -36,6 +36,15 @@ public interface StickyHeaderAdapter<T extends RecyclerView.ViewHolder> {
     long getHeaderId(int position);
 
     /**
+     * the feature available to use GridLayoutManager or FlexBoxLayoutManager
+     * @param position th item position
+     * @return for LinearLayoutManager -> {@link StickyHeaderDecoration#ABOVE_HEADER_AUTO}
+     *         if above is header -> {@link StickyHeaderDecoration#ABOVE_HEADER_NO}
+     *         else {@link StickyHeaderDecoration#ABOVE_HEADER_YES}
+     */
+    int hasHeaderAbove(int position);
+
+    /**
      * Creates a new header ViewHolder.
      *
      * @param parent the header's view parent

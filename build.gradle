@@ -5,17 +5,21 @@ buildscript {
             'compileSdk'         : 28,
             'minSdk'             : 15,
             'targetSdk'          : 28,
-            'androidGradlePlugin': '3.2.0',
+            'androidGradlePlugin': '3.6.3',
             'bintrayRelease'     : '0.5.0',
     ]
 
     repositories {
-        google()
         jcenter()
+        google()
+        mavenCentral()
     }
 
     dependencies {
         classpath "com.android.tools.build:gradle:${versions.androidGradlePlugin}"
+        classpath "com.novoda:bintray-release:${versions.bintrayRelease}"
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -26,7 +30,9 @@ allprojects {
     group = project.GROUP
 
     repositories {
-        google()
+        mavenCentral()
         jcenter()
+        google()
+        maven { url "https://jitpack.io" }
     }
 }

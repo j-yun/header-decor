@@ -33,6 +33,9 @@ import java.util.Map;
  */
 public class StickyHeaderDecoration extends RecyclerView.ItemDecoration {
     public static final long NO_HEADER_ID = -1L;
+    public static final int ABOVE_HEADER_YES = 1;
+    public static final int ABOVE_HEADER_NO = -1;
+    public static final int ABOVE_HEADER_AUTO = 0;
 
     private Map<Long, RecyclerView.ViewHolder> headerCache;
     private StickyHeaderAdapter adapter;
@@ -76,6 +79,14 @@ public class StickyHeaderDecoration extends RecyclerView.ItemDecoration {
     }
 
     private boolean showHeaderAboveItem(int itemAdapterPosition) {
+        final int hasHeaderAbove = adapter.hasHeaderAbove(itemAdapterPosition);
+        if(hasHeaderAbove == ABOVE_HEADER_YES){
+            return true;
+        }else if(hasHeaderAbove == ABOVE_HEADER_NO){
+            return false;
+        }
+
+        // ABOVE_HEADER_AUTO
         if (itemAdapterPosition == 0) {
             return true;
         }

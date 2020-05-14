@@ -26,6 +26,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import ca.barrenechea.stickyheaders.R;
 import ca.barrenechea.widget.recyclerview.decoration.StickyHeaderAdapter;
+import ca.barrenechea.widget.recyclerview.decoration.StickyHeaderDecoration;
 
 public class InlineStickyTestAdapter
         extends RecyclerView.Adapter<InlineStickyTestAdapter.ViewHolder> implements
@@ -58,6 +59,11 @@ public class InlineStickyTestAdapter
     @Override
     public long getHeaderId(int position) {
         return (long) position / 7;
+    }
+
+    @Override
+    public int hasHeaderAbove(int position) {
+        return StickyHeaderDecoration.ABOVE_HEADER_AUTO;
     }
 
     @NonNull

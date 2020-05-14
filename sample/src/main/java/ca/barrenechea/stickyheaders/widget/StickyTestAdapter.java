@@ -62,6 +62,11 @@ public class StickyTestAdapter extends RecyclerView.Adapter<StickyTestAdapter.Vi
         return (long) position / 7;
     }
 
+    @Override
+    public int hasHeaderAbove(int position) {
+        return StickyHeaderDecoration.ABOVE_HEADER_AUTO;
+    }
+
     @NonNull
     @Override
     public HeaderHolder onCreateHeaderViewHolder(@NonNull ViewGroup parent) {

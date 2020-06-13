@@ -18,12 +18,13 @@ package ca.barrenechea.widget.recyclerview.decoration;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;
+import android.view.View;
+import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.View;
-import android.view.ViewGroup;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -190,7 +191,7 @@ public class DoubleHeaderDecoration extends RecyclerView.ItemDecoration {
      */
     @Override
     public void getItemOffsets(@NonNull Rect outRect, @NonNull View view,
-            @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+                               @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
 
         int position = parent.getChildAdapterPosition(view);
 
@@ -256,7 +257,7 @@ public class DoubleHeaderDecoration extends RecyclerView.ItemDecoration {
     }
 
     private int getSubHeaderTop(@NonNull RecyclerView parent, @NonNull View child,
-            @NonNull View header, @NonNull View subHeader, int adapterPos, int layoutPos) {
+                                @NonNull View header, @NonNull View subHeader, int adapterPos, int layoutPos) {
 
         int top = getAnimatedTop(child) - getSubHeaderHeightForLayout(subHeader);
         if (isFirstValidChild(layoutPos, parent)) {
@@ -294,7 +295,7 @@ public class DoubleHeaderDecoration extends RecyclerView.ItemDecoration {
     }
 
     private int getHeaderTop(@NonNull RecyclerView parent, @NonNull View child,
-            @NonNull View header, @NonNull View subHeader, int adapterPos, int layoutPos) {
+                             @NonNull View header, @NonNull View subHeader, int adapterPos, int layoutPos) {
 
         int top = getAnimatedTop(child) - header.getHeight() - getSubHeaderHeightForLayout(subHeader);
         if (isFirstValidChild(layoutPos, parent)) {

@@ -22,13 +22,14 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.util.TypedValue;
+import android.view.View;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.DimenRes;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import android.util.TypedValue;
-import android.view.View;
 
 /**
  * A simple divider decoration with customizable colour, height, and left and right padding.
@@ -75,7 +76,7 @@ public class DividerDecoration extends RecyclerView.ItemDecoration {
      */
     @Override
     public void getItemOffsets(@NonNull Rect outRect, @NonNull View view,
-            @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+                               @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         outRect.set(0, 0, 0, height);
     }
 

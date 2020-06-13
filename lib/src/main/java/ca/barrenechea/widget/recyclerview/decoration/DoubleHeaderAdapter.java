@@ -16,9 +16,10 @@
 
 package ca.barrenechea.widget.recyclerview.decoration;
 
+import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.ViewGroup;
 
 /**
  * The adapter to assist the {@link DoubleHeaderAdapter} in creating and binding the headers and

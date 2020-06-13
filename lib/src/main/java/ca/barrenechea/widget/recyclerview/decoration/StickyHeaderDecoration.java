@@ -29,6 +29,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -196,10 +197,16 @@ public class StickyHeaderDecoration extends RecyclerView.ItemDecoration {
             }
         }
 
-        Collections.sort(adapterPosList, (o1, o2) -> {
-            if(o1.adapterPos > o2.adapterPos){ return 1; }
-            else if(o1.adapterPos < o2.adapterPos){ return -1; }
-            return 0;
+        Collections.sort(adapterPosList, new Comparator<DrawOver>() {
+            @Override
+            public int compare(DrawOver o1, DrawOver o2) {
+                if (o1.adapterPos > o2.adapterPos) {
+                    return 1;
+                } else if (o1.adapterPos < o2.adapterPos) {
+                    return -1;
+                }
+                return 0;
+            }
         });
 
         for(DrawOver item : adapterPosList){
